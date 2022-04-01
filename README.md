@@ -1,2 +1,2 @@
 # zhk API
-修改自 https://github.com/laulzgoay/hitokoto
+https://blog.zimo6918.cn/archives/14.html
