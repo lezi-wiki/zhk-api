@@ -34,7 +34,7 @@ yarn pm2:delete # 删除进程配置
 
 ### 调用
 
-一言 API 位于 `/api/text`，你可以使用GET方法调用。
+一言 API 位于 `/text`，你可以使用GET方法调用。
 
 可用的Param有：
 
@@ -43,7 +43,7 @@ yarn pm2:delete # 删除进程配置
 
 例如：
 
-* `/api/text?type=text` 输出普通文字
-* `/api/text?type=html` 输出网页
-* `/api/text?type=json` 输出json数据，格式为`{"text": "aaabbb"}`
-* `/api/text?type=json&key=zhktext` 输出json数据，格式为`{"zhktext": "aaabbb"}`
+* `/text?type=text` 输出普通文字
+* `/text?type=html` 输出网页
+* `/text?type=json` 输出json数据，格式为`{"text": "aaabbb"}`
+* `/text?type=json&key=zhktext` 输出json数据，格式为`{"zhktext": "aaabbb"}`

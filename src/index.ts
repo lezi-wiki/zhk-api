@@ -12,7 +12,7 @@ const textList: string[] = JSON.parse(textFile.toString("utf8"));
 
 app.use(cors());
 
-app.get("/api/text", (req, res) => {
+app.get("/text", (req, res) => {
     const total = textList.length;
     const text = textList[random.int(0, total - 1)];
 
@@ -73,6 +73,10 @@ app.get("/api/text", (req, res) => {
             break;
     }
     res.end();
+});
+
+app.get("/", (req, res) => {
+    res.redirect("https://blog.zhksb.net");
 });
 
 app.listen(port, () => {
