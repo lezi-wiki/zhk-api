@@ -12,6 +12,6 @@ COPY --from=Builder build build
 COPY --from=Builder package.json package.json
 COPY --from=Builder text.json text.json
 RUN ["npm", "install", "--production"]
-RUN ["npm", "run", "pm2:init"]
+RUN ["npx", "pm2", "start", "build/index.js", "-i", "max", "--name", "zhkapi"]
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
