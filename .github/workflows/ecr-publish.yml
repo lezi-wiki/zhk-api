@@ -36,13 +36,8 @@ jobs:
         with:
           args: 'get-login --no-include-email --region us-west-2'
 
-      - name: Log into registry ${{ env.REGISTRY }}
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: AWS
-          password: ${{ steps.ecr-login.outputs.login-string }}
+      - name: Docker Login
+        run: ${{ steps.ecr-login.outputs.login-string }}
 
       - name: Extract Docker metadata
         id: meta
