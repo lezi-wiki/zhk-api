@@ -1,0 +1,35 @@
+{
+  "name": "zhksb-api",
+  "version": "1.0.0",
+  "description": "张贺凯的一言API",
+  "main": "src/index.ts",
+  "repository": "https://github.com/zhk-sb/api.git",
+  "author": "ZHKSB Group.",
+  "license": "GPL-3.0",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "pm2": "^5.2.0",
+    "random": "^3.0.6",
+    "supervisor": "^0.12.0",
+    "typescript": "^4.6.4",
+    "xml": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.30",
+    "@types/xml": "^1.0.8",
+    "prettier": "^2.6.2"
+  },
+  "scripts": {
+    "tsc": "npx tsc",
+    "dev": "npx tsc && npx supervisor -w build build/index.js",
+    "start": "npx tsc && npx supervisor -w text.json build/index.js",
+    "pm2:init": "npx tsc && npx pm2 start build/index.js -i max --name zhkapi",
+    "pm2:start": "npx pm2 restart all",
+    "pm2:stop": "npx pm2 stop all",
+    "pm2:delete": "npx pm2 delete all"
+  }
+}
